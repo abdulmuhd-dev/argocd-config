@@ -8,15 +8,13 @@ spec:
   source:
     repoURL: https://github.com/flashcode-source/argocd-config.git
     targetRevision: HEAD
-    path: ./
   destination:
     server: https://kubernetes.default.svc
-    namespace: hello-app
+    namespace: hello-world
 
-syncPolicy: 
-  syncOptions:
-  - CreateNamespace=true
-
-automated:
-  selfHeal: true
-  prune: true
+  syncPolicy: 
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
